@@ -4,19 +4,20 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+/* #fc5a03 */
 body {
     font-family: "Nunito", sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #111336;
     background-color: #f4f4f4;
+    /* background-color: #060636; */
 }
 
 /* Header and navigation */
 header {
     position: relative;
     text-align: center;
-    color: white;
+    color: #f4f4f4;
 }
 
 nav { 
@@ -39,13 +40,13 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #f4f4f4;
     text-decoration: none;
     font-weight: bold;
 }
 
 nav ul li a:hover {
-	color: #fc5a03; /* Orange accent */
+	color: #0042bd; /* Orange accent */
 }
 
 .hero {
@@ -54,7 +55,17 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: #f4f4f4;
+}
+
+.quote {
+    text-align: center;
+    background-color: #060636;
+    color: #f4f4f4;
+    font-size: 3rem;
+    font-family: "DM Sans", sans-serif;
+    padding: 50px;
+    width: 100%;
 }
 
 #hero-video {
@@ -79,7 +90,8 @@ nav ul li a:hover {
 .overlay h1 {
 	font-family: "DM Sans", sans-serif;
     font-size: 5rem;
-    color: #fc5a03; /* Orange accent */
+    color: #ed441a; /* Orange accent */
+    text-shadow : 0 0 48px #000214;
 }
 
 .overlay p {
@@ -99,39 +111,93 @@ nav ul li a:hover {
 
 .social-links a {
     margin: 0 10px;
-    color: #ffffff;
+    color: #f4f4f4;
     text-decoration: none;
     font-weight: normal;
 	font-size: 3rem;
 	vertical-align: middle;
 	line-height: 1;
+    text-shadow : 0 0 30px #000214;
 }
 
 .social-links a:hover {
     color: #0042bd; /* Orange accent on hover */
 }
 
+.emph {
+	color: #ed441a;
+	font-weight: bold;
+	font-size: 1.5rem;
+}
+
+.small-emph {
+	font-weight: 600;
+	font-size: 1.1rem;
+}
+
+.large-emph {
+    color: #ed441a;
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.pic {
+    border-radius: 2%;
+	max-width: 100%;
+	height: auto;
+}
+
 /* Section styles */
 section {
     padding: 50px 20px;
     text-align: center;
+	max-width: 64rem;
+	margin-left: auto !important;
+	margin-right: auto !important;
 }
 
 h2 {
 	font-family: "DM Sans", sans-serif;
 	font-weight: 800;
 	font-style: normal;
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 20px;
-    color: #0042bd; /* Blue accent */
+    /* color: #0042bd; */
+    color: #161d6e;
+	--a: -45deg; /* control the angle */
+	--t: .13em; /* thickness of the underline */ 
 }
 
 /* Footer styles */
 footer {
-    background: #282828;
-    color: white;
+    background: #060636;
+    color: #f4f4f4;
     padding: 20px 0;
     text-align: center;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.img-container {
+    width: 285px;
+    height: 380px;
+    border-radius: 8px;
+}
+
+.img-container img {
+    max-width: 100%; /* Ensure the image is responsive */
+    height: auto;
+    flex-shrink: 0; /* Prevent the image from shrinking */
+}
+
+.text {
+    flex: 1; /* Make the text take up remaining space */
+    padding-right: 20px; /* Add some space between the text and image */
 }
 
 /* Responsive styles */
@@ -161,12 +227,84 @@ footer {
     }
 	
 	nav ul li {
-    margin: 0 15px;
-}
+		margin: 0 15px;
+	}
+	
+	h2 {
+		font-size: 2rem;
+	}
+	
+	.emph {
+		font-size: 1.2rem;
+	}
+
+    .large-emph {
+        font-size: 1.7rem;
+    }
+	
+	.social-links {
+		margin-top: 20px;
+	}
+
+    .img-container {
+        width: 100%;
+        height: inherit;
+        margin-top: 50px;
+    }
+
+    .img-container img {
+        max-width: 100%;
+    }
+
+    .quote {
+        font-size: 1.7rem;
+        padding: 20px;
+        margin-bottom: 50px;
+    }
+
+    .container {
+        flex-direction: column; /* Stack the content vertically */
+    }
 }
 
 p {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+}
+
+p .icon {
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #ed441a;
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+
+strong {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -0.125rem;
+    left: -0.5rem;
+    right: -0.5rem;
+    height: 0.75rem;
+    z-index: -1;
+    background-image: url("underline.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+p > strong {
+  font-weight: 400;  
+
+  &::after {
+    bottom: -0.2rem;
+    height: 0.5rem;
+    left: -0.25rem;
+    right: -0.25rem;
+  }
 }
