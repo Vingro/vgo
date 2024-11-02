@@ -376,7 +376,11 @@ font-weight: 400;
 
     .contact-links li {
         flex-direction: column;
-        padding: 5px 10px;
+        padding: 20px 10px;
+    }
+
+    .contact-links span {
+        margin-right: 10px;
     }
 
     .text, .wide-text {
