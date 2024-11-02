@@ -299,7 +299,7 @@ font-weight: 400;
 }
 
 /* Responsive styles */
-@media (max-width: 768px) {
+@media (max-width: 984px) {
     /* nav ul { */
         /* flex-direction: column; */
     /* } */
