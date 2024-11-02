@@ -124,6 +124,39 @@ nav ul li a:hover {
     color: #0042bd; /* Orange accent on hover */
 }
 
+.contact-links {
+    margin-top: 30px;
+    padding: 0;
+    display:flex;
+    justify-content: center;
+}
+
+.contact-links li {
+    list-style: none;
+    display: list-item;
+    padding: 5px 10px;
+}
+
+.contact-links span {
+    font-size: 2rem;
+    font-weight: normal;
+    text-decoration: none;
+    color: #161d6e;
+    vertical-align: middle;
+    line-height: 1;
+    margin-right: 5px;
+}
+
+.contact-links li:hover {
+    color: #0042bd;
+    text-decoration: underline;
+}
+
+.contact-links a {
+    color: #0042bd;
+    text-decoration: none;
+}
+
 .emph {
 	color: #ed441a;
 	font-weight: bold;
@@ -183,8 +216,18 @@ footer {
     padding: 20px;
 }
 
+.container.reverse {
+    flex-direction: row-reverse;
+}
+
 .img-container {
     width: 285px;
+    height: 380px;
+    border-radius: 8px;
+}
+
+.img-container-ls {
+    width: 600px;
     height: 380px;
     border-radius: 8px;
 }
@@ -195,9 +238,64 @@ footer {
     flex-shrink: 0; /* Prevent the image from shrinking */
 }
 
+.img-container-ls img {
+    max-width: 100%; /* Ensure the image is responsive */
+    height: auto;
+    flex-shrink: 0; /* Prevent the image from shrinking */
+}
+
 .text {
     flex: 1; /* Make the text take up remaining space */
-    padding-right: 20px; /* Add some space between the text and image */
+    max-width: 285px;
+    /* padding-right: 20px; /* Add some space between the text and image */
+    /*padding-left: 20px; */
+}
+
+.wide-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+p {
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+p .icon {
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #ed441a;
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+
+strong {
+position: relative;
+
+&::after {
+    content: '';
+    position: absolute;
+    bottom: -0.125rem;
+    left: -0.5rem;
+    right: -0.5rem;
+    height: 0.75rem;
+    z-index: -1;
+    background-image: url("underline.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+}
+
+p > strong {
+font-weight: 400;  
+
+&::after {
+    bottom: -0.2rem;
+    height: 0.5rem;
+    left: -0.25rem;
+    right: -0.25rem;
+}
 }
 
 /* Responsive styles */
@@ -252,6 +350,12 @@ footer {
         margin-top: 50px;
     }
 
+    .img-container-ls {
+        width: inherit;
+        height: 380px;
+        margin-top: 50px;
+    }
+
     .img-container img {
         max-width: 100%;
     }
@@ -262,49 +366,20 @@ footer {
         margin-bottom: 50px;
     }
 
-    .container {
+    .container, .container.reverse {
         flex-direction: column; /* Stack the content vertically */
     }
-}
 
-p {
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
+    .contact-links {
+        display: block;
+    }
 
-p .icon {
-    margin-left: 20px;
-    margin-right: 20px;
-    color: #ed441a;
-    font-size: 1.3rem;
-    line-height: 1.6;
-}
+    .contact-links li {
+        flex-direction: column;
+        padding: 5px 10px;
+    }
 
-strong {
-  position: relative;
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -0.125rem;
-    left: -0.5rem;
-    right: -0.5rem;
-    height: 0.75rem;
-    z-index: -1;
-    background-image: url("underline.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-}
-
-p > strong {
-  font-weight: 400;  
-
-  &::after {
-    bottom: -0.2rem;
-    height: 0.5rem;
-    left: -0.25rem;
-    right: -0.25rem;
-  }
+    .text, .wide-text {
+        max-width: 100%;
+    }
 }
